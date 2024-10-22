@@ -17,7 +17,9 @@ class SubjectResource extends Resource
 {
     protected static ?string $model = Subject::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-book-open';
+    protected static ?string $navigationLabel = 'Subjects';
+    protected static ?string $navigationGroup = 'Manage Subjects';
 
     public static function form(Form $form): Form
     {
@@ -47,7 +49,8 @@ class SubjectResource extends Resource
                     // ->circular()
                     // ->size(80),
                     ->height(80)
-                    ->width(120),
+                    ->width(120)
+                    ->extraAttributes(['style' => 'margin-right: 100px;']),
 
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),

@@ -17,7 +17,9 @@ class TeacherResource extends Resource
 {
     protected static ?string $model = Teacher::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
+    protected static ?string $navigationLabel = 'Teachers';
+    protected static ?string $navigationGroup = 'Manage Teachers';
 
     public static function form(Form $form): Form
     {
@@ -70,8 +72,8 @@ class TeacherResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('contact')
-                    ->searchable(),
+                // Tables\Columns\TextColumn::make('contact')
+                //     ->searchable(),
 
                 Tables\Columns\IconColumn::make('is_verified')
                     ->boolean(),
